@@ -31,5 +31,3 @@ include_directories(${EIGEN3_INCLUDE_DIR}
                     ${PCL_INCLUDE_DIRS}
                     ./include
                     )
-
-                    sadfasdfasdf
