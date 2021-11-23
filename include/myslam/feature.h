@@ -16,7 +16,7 @@ public:
     std::weak_ptr<Frame> frame_;  //TODO为什么要用weak_ptr避免循环引用，可以看一看成员变量是否包含了Feature类，这里是Frame持有了Feature
     
     cv::KeyPoint position_;
-    std::weak_ptr<MapPoint> map_point_;  //?
+    std::weak_ptr<MapPoint> map_point_;  //mappoint（3d坐标）和feature（2d）属于一对一的关系
     bool is_outlier_=false; //TODO是否为异常点，这里异常指什么？
     bool is_on_left_image_=true;
 public:

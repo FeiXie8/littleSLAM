@@ -1,3 +1,7 @@
+/**
+ *路标类，每一个路标由多个特征点组成，这些特征点来自于不同位姿相机的观测
+ **/
+
 #pragma once
 #include "myslam/common_include.h"
 

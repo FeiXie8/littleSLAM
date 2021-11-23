@@ -18,7 +18,7 @@ public:
 
     LandmarksType GetAllMapPoints(){
         std::lock_guard<std::mutex> lck(data_mutex_);
-        return Landmarks_;
+        return landmarks_;
     }
 
     LandmarksType GetActiveMapPoints(){
@@ -37,7 +37,7 @@ private:
     void RemoveOldKeyframe();
 
     std::mutex data_mutex_;
-    LandmarksType Landmarks_;;
+    LandmarksType landmarks_;;
     LandmarksType active_landmarks_;
     KeyframesType keyframes_;
     KeyframesType active_keyframes_;

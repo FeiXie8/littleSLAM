@@ -102,6 +102,7 @@ typedef Eigen::Matrix<float, 14, 1> Vec14f;
 #include <sophus/se3.hpp>
 #include <sophus/so3.hpp>
 
+
 typedef Sophus::SE3d SE3;
 typedef Sophus::SO3d SO3;
 
