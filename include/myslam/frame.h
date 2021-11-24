@@ -15,7 +15,7 @@ public:
     unsigned long keyframe_id_=0;
     bool is_keyframe_=false;
     double time_stamp_;
-    SE3 pose_;;
+    SE3 pose_;
     std::mutex pose_mutex_;
     cv::Mat left_img_,right_img_;
 

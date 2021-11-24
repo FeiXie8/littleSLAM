@@ -29,5 +29,6 @@ include_directories(${EIGEN3_INCLUDE_DIR}
                     ${G2O_INCLUDE_DIRS}
                     ${Pangolin_INCLUDE_DIRS}
                     ${PCL_INCLUDE_DIRS}
+                    "/usr/include/suitesparse"
                     ./include
                     )
