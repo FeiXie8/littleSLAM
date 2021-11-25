@@ -8,10 +8,11 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 add_definitions("-DUSE_EIGEN")
 
+
 find_package(OpenCV 4.5 REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(Sophus REQUIRED)
-find_package(fmt REQUIRED)
+#find_package(fmt REQUIRED)
 find_package(Ceres REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(PCL REQUIRED)
@@ -52,9 +53,11 @@ set(THIRD_PARTY_LIBS ${OpenCV_LIBS}
                      ${GFLAGS_LIBRARIES}
                      pthread
                      ${CSPARSE_LIBRARY}
+                     fmt
                      )
 
 enable_testing()
 
 add_subdirectory(src)
-#add_subdirectory(test)
+add_subdirectory(test)
+add_subdirectory(app)

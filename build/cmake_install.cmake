@@ -40,6 +40,8 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/xiefei/learnSLAM/littleSlam/build/src/cmake_install.cmake")
+  include("/home/xiefei/learnSLAM/littleSlam/build/test/cmake_install.cmake")
+  include("/home/xiefei/learnSLAM/littleSlam/build/app/cmake_install.cmake")
 
 endif()
 

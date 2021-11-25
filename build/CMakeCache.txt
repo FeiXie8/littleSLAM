@@ -439,9 +439,6 @@ G2O_CORE_LIBRARY:FILEPATH=/usr/local/lib/libg2o_core.so
 //Path to a library.
 G2O_CORE_LIBRARY_DEBUG:FILEPATH=G2O_CORE_LIBRARY_DEBUG-NOTFOUND
 
-//The directory containing a CMake configuration file for G2O.
-G2O_DIR:PATH=G2O_DIR-NOTFOUND
-
 //Path to a file.
 G2O_INCLUDE_DIR:PATH=/usr/local/include
 
@@ -545,10 +542,10 @@ G2O_TYPES_SLAM3D_DEBUG:FILEPATH=G2O_TYPES_SLAM3D_DEBUG-NOTFOUND
 GFlags_DIR:PATH=/usr/local/lib/cmake/gflags
 
 //Path to a file.
-GLOG_INCLUDE_DIR:PATH=/usr/include
+GLOG_INCLUDE_DIR:PATH=/usr/local/include
 
 //Path to a library.
-GLOG_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libglog.so
+GLOG_LIBRARY:FILEPATH=/usr/local/lib/libglog.so
 
 //Path to a file.
 GTEST_INCLUDE_DIR:PATH=/usr/include
@@ -818,7 +815,7 @@ fmt_DIR:PATH=/usr/local/lib/cmake/fmt
 gflags_DIR:PATH=/usr/local/lib/cmake/gflags
 
 //Dependencies for the target
-myslam_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_gapi;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_world;general;opencv_alphamat;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cudaarithm;general;opencv_cudabgsegm;general;opencv_cudacodec;general;opencv_cudafeatures2d;general;opencv_cudafilters;general;opencv_cudaimgproc;general;opencv_cudalegacy;general;opencv_cudaobjdetect;general;opencv_cudaoptflow;general;opencv_cudastereo;general;opencv_cudawarping;general;opencv_cudev;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_intensity_transform;general;opencv_line_descriptor;general;opencv_mcc;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_rapid;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_wechat_qrcode;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;pango_core;general;pango_display;general;pango_geometry;general;pango_glgeometry;general;pango_image;general;pango_opengl;general;pango_packetstream;general;pango_plot;general;pango_python;general;pango_scene;general;pango_tools;general;pango_vars;general;pango_video;general;pango_windowing;general;tinyobj;general;GL;general;GLU;general;GLEW;general;glut;general;g2o_core;general;g2o_stuff;general;g2o_types_sba;general;g2o_solver_csparse;general;g2o_csparse_extension;general;/usr/lib/x86_64-linux-gnu/libgtest.a;general;/usr/lib/x86_64-linux-gnu/libgtest_main.a;general;/usr/lib/x86_64-linux-gnu/libglog.so;general;gflags_shared;general;pthread;general;/usr/lib/x86_64-linux-gnu/libcxsparse.so;
+myslam_LIB_DEPENDS:STATIC=general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_gapi;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_world;general;opencv_alphamat;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_cudaarithm;general;opencv_cudabgsegm;general;opencv_cudacodec;general;opencv_cudafeatures2d;general;opencv_cudafilters;general;opencv_cudaimgproc;general;opencv_cudalegacy;general;opencv_cudaobjdetect;general;opencv_cudaoptflow;general;opencv_cudastereo;general;opencv_cudawarping;general;opencv_cudev;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_intensity_transform;general;opencv_line_descriptor;general;opencv_mcc;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_rapid;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_wechat_qrcode;general;opencv_xfeatures2d;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;pango_core;general;pango_display;general;pango_geometry;general;pango_glgeometry;general;pango_image;general;pango_opengl;general;pango_packetstream;general;pango_plot;general;pango_python;general;pango_scene;general;pango_tools;general;pango_vars;general;pango_video;general;pango_windowing;general;tinyobj;general;GL;general;GLU;general;GLEW;general;glut;general;g2o_core;general;g2o_stuff;general;g2o_types_sba;general;g2o_solver_csparse;general;g2o_csparse_extension;general;/usr/lib/x86_64-linux-gnu/libgtest.a;general;/usr/lib/x86_64-linux-gnu/libgtest_main.a;general;/usr/local/lib/libglog.so;general;gflags_static;general;pthread;general;/usr/lib/x86_64-linux-gnu/libcxsparse.so;general;fmt;
 
 //Path to a library.
 pkgcfg_lib_PC_FLANN_flann:FILEPATH=/usr/lib/x86_64-linux-gnu/libflann.so
@@ -985,7 +982,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1142,7 +1139,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_FLANN:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_
 //Details about finding GTest
 FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/x86_64-linux-gnu/libgtest.a][/usr/include][/usr/lib/x86_64-linux-gnu/libgtest_main.a][v()]
 //Details about finding Glog
-FIND_PACKAGE_MESSAGE_DETAILS_Glog:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libglog.so][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_Glog:INTERNAL=[/usr/local/include][/usr/local/lib/libglog.so][v()]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr/local][v4.5.2(4.5)]
 //Details about finding OpenNI

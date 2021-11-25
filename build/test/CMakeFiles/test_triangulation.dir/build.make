@@ -81,7 +81,8 @@ test_triangulation_EXTERNAL_OBJECTS =
 ../bin/test_triangulation: test/CMakeFiles/test_triangulation.dir/build.make
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libgtest.a
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libgtest_main.a
-../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libglog.so
+../bin/test_triangulation: /usr/local/lib/libglog.so
+../bin/test_triangulation: /usr/local/lib/libgflags.a
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libcxsparse.so
 ../bin/test_triangulation: ../lib/libmyslam.so
 ../bin/test_triangulation: /usr/local/lib/libopencv_world.so.4.5.2
@@ -173,8 +174,8 @@ test_triangulation_EXTERNAL_OBJECTS =
 ../bin/test_triangulation: /usr/local/lib/libtinyobj.so
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libgtest.a
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libgtest_main.a
-../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libglog.so
-../bin/test_triangulation: /usr/local/lib/libgflags.so.2.2.2
+../bin/test_triangulation: /usr/local/lib/libglog.so
+../bin/test_triangulation: /usr/local/lib/libgflags.a
 ../bin/test_triangulation: /usr/lib/x86_64-linux-gnu/libcxsparse.so
 ../bin/test_triangulation: test/CMakeFiles/test_triangulation.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/test_triangulation"

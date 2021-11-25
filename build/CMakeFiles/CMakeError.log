@@ -56,3 +56,235 @@ make: *** [Makefile:121：cmTC_dd646/fast] 错误 2
 
 
 
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_66a7e/fast && /usr/bin/make -f CMakeFiles/cmTC_66a7e.dir/build.make CMakeFiles/cmTC_66a7e.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_66a7e.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_66a7e.dir/src.c.o   -c /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_66a7e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66a7e.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_66a7e.dir/src.c.o  -o cmTC_66a7e 
+/usr/bin/ld: CMakeFiles/cmTC_66a7e.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_66a7e.dir/build.make:87：cmTC_66a7e] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_66a7e/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_95717/fast && /usr/bin/make -f CMakeFiles/cmTC_95717.dir/build.make CMakeFiles/cmTC_95717.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_95717.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_95717.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_95717
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_95717.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_95717.dir/CheckFunctionExists.c.o  -o cmTC_95717  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_95717.dir/build.make:87：cmTC_95717] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_95717/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_a477d/fast && /usr/bin/make -f CMakeFiles/cmTC_a477d.dir/build.make CMakeFiles/cmTC_a477d.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_a477d.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a477d.dir/src.c.o   -c /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a477d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a477d.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_a477d.dir/src.c.o  -o cmTC_a477d 
+/usr/bin/ld: CMakeFiles/cmTC_a477d.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_a477d.dir/build.make:87：cmTC_a477d] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_a477d/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c6f50/fast && /usr/bin/make -f CMakeFiles/cmTC_c6f50.dir/build.make CMakeFiles/cmTC_c6f50.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_c6f50.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c6f50.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c6f50
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6f50.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c6f50.dir/CheckFunctionExists.c.o  -o cmTC_c6f50  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_c6f50.dir/build.make:87：cmTC_c6f50] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_c6f50/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8957a/fast && /usr/bin/make -f CMakeFiles/cmTC_8957a.dir/build.make CMakeFiles/cmTC_8957a.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_8957a.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_8957a.dir/src.c.o   -c /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_8957a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8957a.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_8957a.dir/src.c.o  -o cmTC_8957a 
+/usr/bin/ld: CMakeFiles/cmTC_8957a.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_8957a.dir/build.make:87：cmTC_8957a] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_8957a/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4a735/fast && /usr/bin/make -f CMakeFiles/cmTC_4a735.dir/build.make CMakeFiles/cmTC_4a735.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_4a735.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4a735.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4a735
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a735.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_4a735.dir/CheckFunctionExists.c.o  -o cmTC_4a735  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_4a735.dir/build.make:87：cmTC_4a735] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_4a735/fast] 错误 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d7caa/fast && /usr/bin/make -f CMakeFiles/cmTC_d7caa.dir/build.make CMakeFiles/cmTC_d7caa.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_d7caa.dir/src.c.o
+/usr/bin/cc   -fPIC -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_d7caa.dir/src.c.o   -c /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_d7caa
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7caa.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_d7caa.dir/src.c.o  -o cmTC_d7caa 
+/usr/bin/ld: CMakeFiles/cmTC_d7caa.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_d7caa.dir/build.make:87：cmTC_d7caa] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_d7caa/fast] 错误 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_39a77/fast && /usr/bin/make -f CMakeFiles/cmTC_39a77.dir/build.make CMakeFiles/cmTC_39a77.dir/build
+make[1]: 进入目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_39a77.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_39a77.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_39a77
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39a77.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_39a77.dir/CheckFunctionExists.c.o  -o cmTC_39a77  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_39a77.dir/build.make:87：cmTC_39a77] 错误 1
+make[1]: 离开目录“/home/xiefei/learnSLAM/littleSlam/build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_39a77/fast] 错误 2
+
+
+

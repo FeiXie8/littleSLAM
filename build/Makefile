@@ -134,6 +134,32 @@ myslam/fast:
 	$(MAKE) -f src/CMakeFiles/myslam.dir/build.make src/CMakeFiles/myslam.dir/build
 .PHONY : myslam/fast
 
+#=============================================================================
+# Target rules for targets named test_triangulation
+
+# Build rule for target.
+test_triangulation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_triangulation
+.PHONY : test_triangulation
+
+# fast build rule for target.
+test_triangulation/fast:
+	$(MAKE) -f test/CMakeFiles/test_triangulation.dir/build.make test/CMakeFiles/test_triangulation.dir/build
+.PHONY : test_triangulation/fast
+
+#=============================================================================
+# Target rules for targets named run_kitti_stereo
+
+# Build rule for target.
+run_kitti_stereo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_kitti_stereo
+.PHONY : run_kitti_stereo
+
+# fast build rule for target.
+run_kitti_stereo/fast:
+	$(MAKE) -f app/CMakeFiles/run_kitti_stereo.dir/build.make app/CMakeFiles/run_kitti_stereo.dir/build
+.PHONY : run_kitti_stereo/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -144,6 +170,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... myslam"
+	@echo "... test_triangulation"
+	@echo "... run_kitti_stereo"
 .PHONY : help
 
 

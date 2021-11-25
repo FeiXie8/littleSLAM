@@ -304,8 +304,8 @@ myslam_EXTERNAL_OBJECTS =
 ../lib/libmyslam.so: /usr/local/lib/libpango_video.so
 ../lib/libmyslam.so: /usr/lib/x86_64-linux-gnu/libgtest.a
 ../lib/libmyslam.so: /usr/lib/x86_64-linux-gnu/libgtest_main.a
-../lib/libmyslam.so: /usr/lib/x86_64-linux-gnu/libglog.so
-../lib/libmyslam.so: /usr/local/lib/libgflags.so.2.2.2
+../lib/libmyslam.so: /usr/local/lib/libglog.so
+../lib/libmyslam.so: /usr/local/lib/libgflags.a
 ../lib/libmyslam.so: /usr/lib/x86_64-linux-gnu/libcxsparse.so
 ../lib/libmyslam.so: /usr/local/lib/libopencv_world.so.4.5.2
 ../lib/libmyslam.so: /usr/local/lib/libpango_geometry.so

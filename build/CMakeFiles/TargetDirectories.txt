@@ -5,3 +5,11 @@
 /home/xiefei/learnSLAM/littleSlam/build/src/CMakeFiles/edit_cache.dir
 /home/xiefei/learnSLAM/littleSlam/build/src/CMakeFiles/test.dir
 /home/xiefei/learnSLAM/littleSlam/build/src/CMakeFiles/myslam.dir
+/home/xiefei/learnSLAM/littleSlam/build/test/CMakeFiles/rebuild_cache.dir
+/home/xiefei/learnSLAM/littleSlam/build/test/CMakeFiles/edit_cache.dir
+/home/xiefei/learnSLAM/littleSlam/build/test/CMakeFiles/test.dir
+/home/xiefei/learnSLAM/littleSlam/build/test/CMakeFiles/test_triangulation.dir
+/home/xiefei/learnSLAM/littleSlam/build/app/CMakeFiles/rebuild_cache.dir
+/home/xiefei/learnSLAM/littleSlam/build/app/CMakeFiles/edit_cache.dir
+/home/xiefei/learnSLAM/littleSlam/build/app/CMakeFiles/test.dir
+/home/xiefei/learnSLAM/littleSlam/build/app/CMakeFiles/run_kitti_stereo.dir
