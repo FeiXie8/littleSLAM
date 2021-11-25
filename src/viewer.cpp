@@ -90,4 +90,70 @@ void Viewer::followCurrentFrame(pangolin::OpenGlRenderState& vis_camera){
     pangolin::OpenGlMatrix m(Twc.matrix());
     vis_camera.Follow(m,true);
 }
+
+/**
+ * 这个函数是Opengl常用思想，每一次变换都是从相对于世界坐标系0位姿开始的，这也符合编程逻辑 
+ */
+void Viewer::drawFrame(Frame::Ptr frame,const float* color){
+    SE3 Twc=frame->Pose().inverse();
+    const float sz=1.0;
+    const int line_width=2.0;
+    const float fx = 400;
+    const float fy = 400;
+    const float cx = 512;
+    const float cy = 384;
+    const float width = 1080;
+    const float height = 768;
+
+    glPushMatrix();
+
+    Sophus::Matrix4f m=Twc.matrix().template cast<float>(); //TODO这里实验一下template的作用
+    glMultMatrixf((GLfloat*)m.data());
+    
+    if(color==nullptr){
+        glColor3f(1,0,0);
+    }else{
+        glColor3f(color[0],color[1],color[2]);
+    }
+
+    glLineWidth(line_width);
+    glBegin(GL_LINES);
+    glVertex3f(0, 0, 0);
+    glVertex3f(sz * (0 - cx) / fx, sz * (0 - cy) / fy, sz);
+    glVertex3f(0, 0, 0);
+    glVertex3f(sz * (0 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+    glVertex3f(0, 0, 0);
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+    glVertex3f(0, 0, 0);
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (0 - cy) / fy, sz);
+
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (0 - cy) / fy, sz);
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+    glVertex3f(sz * (0 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+
+    glVertex3f(sz * (0 - cx) / fx, sz * (height - 1 - cy) / fy, sz);
+    glVertex3f(sz * (0 - cx) / fx, sz * (0 - cy) / fy, sz);
+
+    glVertex3f(sz * (0 - cx) / fx, sz * (0 - cy) / fy, sz);
+    glVertex3f(sz * (width - 1 - cx) / fx, sz * (0 - cy) / fy, sz);
+
+    glEnd();
+    glPopMatrix();
+}
+
+void Viewer::drawMapPoints(){
+    const float red[3]={1.0,0,0};
+    for(auto& kf:active_keyframes_){
+        drawFrame(kf.second,red);
+    }
+    glPointSize(2);
+    glBegin(GL_POINTS);
+    for(auto& landmark:active_landmarks_){
+        auto pos=landmark.second->Pos();
+        glColor3f(red[0],red[1],red[2]);
+        glVertex3d(pos[0],pos[1],pos[2]);
+    }
+}
 }

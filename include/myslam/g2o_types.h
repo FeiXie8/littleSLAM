@@ -21,7 +21,7 @@ public:
         Vec6 update_eigen;
         update_eigen<<update[0],update[1],update[2],update[3],update[4],update[5];
         _estimate=SE3::exp(update_eigen)*_estimate;
-    }
+    } //TODO基于李代数的更新
     virtual bool read(std::istream& in) override {return true;}
     virtual bool write(std::ostream& out) const override {return true;}
 };
@@ -80,7 +80,7 @@ class EdgeProjection:public g2o::BaseBinaryEdge<2,Vec2,VertexPose,VertexXYZ>{
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
 
-    EdgeProjection(const Mat& K,const SE3& cam_ext):_K(K){
+    EdgeProjection(const Mat33& K,const SE3& cam_ext):_K(K){
         _cam_ext=cam_ext;
     }
 
@@ -97,7 +97,6 @@ public:
         const VertexPose* v0=static_cast<VertexPose*>(_vertices[0]);
         const VertexXYZ* v1=static_cast<VertexXYZ*>(_vertices[1]);
         SE3 T=v0->estimate();
-        Vec3 pw=v1->estimate();
         Vec3 pw=v1->estimate();
         Vec3 pos_cam=_cam_ext*T*pw;
         double fx=_K(0,0);

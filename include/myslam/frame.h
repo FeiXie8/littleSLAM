@@ -24,10 +24,17 @@ public:
 public:
     Frame(){}
     Frame(long id,double time_stamp,const SE3& pose,const Mat& left,const Mat& right);
+
     SE3 Pose(){
         std::lock_guard<std::mutex> lck(pose_mutex_);
         return pose_;
     }
+
+    void setPose(const SE3 &pose) {
+        std::unique_lock<std::mutex> lck(pose_mutex_);
+        pose_ = pose;
+    }
+
     void setKeyFrame();
     static std::shared_ptr<Frame> CreateFrame();//工厂构建模式，分配id
 };

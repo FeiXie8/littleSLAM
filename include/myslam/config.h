@@ -8,7 +8,7 @@ private:
     cv::FileStorage file_;
     Config(){}
 public:
-    ~Config(){}
+    ~Config();
     static bool setParameterFile(const std::string& filename);
 
     template<typename T>

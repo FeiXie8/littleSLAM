@@ -2,7 +2,7 @@
 
 #include "myslam/common_include.h"
 
-namespace myslan{
+namespace myslam{
 inline bool triangulation(const std::vector<SE3>& poses,const std::vector<Vec3> points,Vec3& pt_world){
     MatXX A(2*poses.size(),4);
     VecX b(2*poses.size());

@@ -14,10 +14,18 @@ public:
 
     void SetCameras(Camera::Ptr left,Camera::Ptr right){
         cam_left_=left;
+        cam_right_=right;
     }
-private:
-    void BackendLoop();
 
+    void setMap(std::shared_ptr<Map> map){map_=map;}
+
+    void updateMap();
+
+    void Stop();
+private:
+    void BackendLoop();  //后端线程
+
+    //BA优化
     void Optimize(Map::KeyframesType& keyframes,Map::LandmarksType& landmarks);
 
     std::shared_ptr<Map> map_;

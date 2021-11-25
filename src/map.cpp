@@ -71,17 +71,17 @@ void Map::RemoveOldKeyframe(){
     }
 
     CleanMap();
-    }
-    void Map::CleanMap(){
-        int cnt_landmark_removed=0;
-        for(auto iter=active_landmarks_.begin();iter!=active_landmarks_.end();){
-            if(iter->second->observed_times_==0){
-                iter=active_landmarks_.erase(iter); //这里是c++的特性，防止指针失效
-                cnt_landmark_removed++;
-            }else{
-                ++iter;
-            }
+}
+void Map::CleanMap(){
+    int cnt_landmark_removed=0;
+    for(auto iter=active_landmarks_.begin();iter!=active_landmarks_.end();){
+        if(iter->second->observed_times_==0){
+            iter=active_landmarks_.erase(iter); //这里是c++的特性，防止指针失效
+            cnt_landmark_removed++;
+        }else{
+            ++iter;
         }
-        LOG(INFO)<<"Removed " << cnt_landmark_removed << " active landmarks";
     }
+    LOG(INFO)<<"Removed " << cnt_landmark_removed << " active landmarks";
+}
 }
